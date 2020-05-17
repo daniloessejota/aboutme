@@ -19,6 +19,13 @@ body {
   font-family: 'Inter', Arial, Helvetica, sans-serif;;
 }
 
+p {
+  line-height: 1.5em;
+  text-indent: 35px;
+  text-align: justify;
+  margin-top: 20px;
+}
+
 /*Resposividade Body*/
 @media (min-width: 400px) {
   body {
@@ -32,13 +39,14 @@ body {
   }
 }
 
-
 /*Estilos Header*/
 .menu {
   background-color: rgba(207, 207, 207);
   position: fixed;
   top: 0;
   width: 100vw;
+
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, .5)
 }
 
 .menu ul {
@@ -49,7 +57,7 @@ body {
 .menu a {
   color: rgb(15, 15, 15);
   display: block;
-  padding: 20px;
+  padding: 20px 5px 20px 5px;
 
   font-size: 1em;
   font-weight: bold;
@@ -85,9 +93,8 @@ body {
   padding: 20px;
 }
 
-
 /*Responsividade*/
-@media (min-width: 600px) {
+@media (min-width: 760px) { 
   .first-section {
     height: 65vh;
   }
@@ -124,4 +131,22 @@ body {
     margin-left: 25px;
     padding: 20px;
   }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px 40px 20px 40px;
+}
+
+.flex {
+  display: flex;
+  justify-content: center;
+}
+
+.flex img {
+  padding-top: 10px;
+  width: 265px;
+  height: 165px;
 }
