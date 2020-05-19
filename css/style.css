@@ -13,10 +13,15 @@
 }
 
 /*Elementos*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   width: 100vw;
   height: 100vh;
-  font-family: 'Inter', Arial, Helvetica, sans-serif;;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  color: rgb(15, 15, 15);
 }
 
 p {
@@ -41,27 +46,104 @@ h3 {
   padding: 20px 0 20px 0;
 }
 
-/*Resposividade Body*/
-@media (min-width: 400px) {
+h4 {
+  font-size: 0.5em;
+  font-weight: 400;
+}
+
+span {
+  font-weight: 700;
+  font-size: 1em;
+  padding-left: 150px;
+  line-height: 10px;
+}
+
+
+/*Resposividade*/
+@media (min-width: 300px) {
   body {
     font-size: 18px;
   }
+
+  .grid-contacts {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, 10px);
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+    justify-content: center;
+  }
+
+  .grid-contacts a {
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 2px solid rgb(15, 15, 15);
+    color: rgb(15, 15, 15);
+    font-size: 1em;
+  }
+
+  .fab {
+    margin-top: 4px;
+  }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 500px) {
   body {
     font-size: 22px;
+  }
+
+  .grid-contacts {
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: repeat(3, 12px);
+    grid-column-gap: 10px;
+    grid-row-gap: 15px;
+  }
+
+  .grid-contacts a {
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border: 2px solid rgb(15, 15, 15);
+    color: rgb(15, 15, 15);
+    font-size: 1em;
+  }
+
+  .fab {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 760px) { 
+  .first-section {
+    height: 85vh;
+  }
+
+  .first-section img {
+    width: 550px;
+    height: 240px;
+    margin-top: 10px;
+    margin-right: auto;
+    margin-left: auto; 
+    padding: 20px;
+  }
+
+  .fab {
+    display: block;
+    font-size: 3em;
+    margin-left: 80px;
   }
 }
 
 /*Estilos Header*/
 .menu {
   background-color: rgba(207, 207, 207);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, .5);
   position: fixed;
   top: 0;
   width: 100vw;
-
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, .5)
 }
 
 .menu ul {
@@ -70,7 +152,6 @@ h3 {
 }
 
 .menu a {
-  color: rgb(15, 15, 15);
   display: block;
   padding: 20px 5px 20px 5px;
 
@@ -78,16 +159,20 @@ h3 {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+
+  color: rgb(15, 15, 15);  
+  transition: border-bottom, color, 0.3s;
 }
 
-.menu a:hover{
+.menu a:hover,
+.menu a:active {
   border-bottom: 5px solid rgb(240, 76, 76);
   color: rgb(240, 76, 76);
 }
 
 /*Estilos Seção 1 - Introdução*/
 .first-section {
-  height: 85vh;
+  height: 90vh;
   display: grid;
   align-items: center;
   justify-content: center;
@@ -95,55 +180,39 @@ h3 {
   background: gold;
 }
 
-.first-section h1 {
+.introduction {
+  margin: 0 auto;
+}
+
+/*.first-section h1 {
   font-size: 3em;
   text-align: center;
-  padding-top: 75px;
-  padding-right: 5px;
-}
+  padding: 75px 5px 0 0;
+}*/
 
 .first-section img {
-  width: 350px;
-  height: 350px;
-  padding: 20px;
+  width: 320px;
+  height: 320px;
+  margin-top: 5px;
 }
 
-/*Responsividade*/
-@media (min-width: 760px) { 
-  .first-section {
-    height: 65vh;
-  }
-
-  .first-section img {
-    width: 450px;
-    height: 450px;
-    margin-left: 10px;
-    padding: 20px;
-  }
-}
-
-@media (min-width: 1000px) {
-  .first-section {
-    height: 65vh;
-  }
-
-  .first-section img {
-    width: 450px;
-    height: 450px;
-    margin-left: 50px;
-    padding: 20px;
-  }
-}
-
+/*Breakpoint*/
 @media (orientation: landscape) {
+  /*.first-section h1 {
+    font-size: 2.5em;
+    margin-top: 1px;
+  }*/
+
   .first-section {
-    height: 135vh;
+    min-height: 95vh;
   }
 
   .first-section img {
-    width: 350px;
-    height: 350px;
-    margin-left: 25px;
+    width: 280px;
+    height: 280px;
+    margin-top: 70px;
+    margin-right: auto; 
+    margin-left: auto;
     padding: 20px;
   }
 }
@@ -162,19 +231,24 @@ h3 {
 }
 
 .flex img {
-  padding-top: 10px;
-  width: 265px;
-  height: 165px;
+  padding-top: 20px;
+  width: 250px;
+  height: 145px;
 }
 
 /*Estilos Sessão 3 - Projetos*/
 .img-projects img{
-  width: 280px;
-  height: 130px;
+  width: 290px;
+  height: 145px;
   align-items: center;
   justify-content: center;
   object-fit: cover;
   object-position: center top;
+}
+
+.img-projects img:hover,
+.img-projects img:active {
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
 }
 
 .grid {
@@ -184,10 +258,11 @@ h3 {
 }
 
 .grid p {
-  margin-top: 0;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
-/*Responsividade*/
+/*Responsividade Grid dos Projetos*/
 @media (min-width: 1300px) {
    .grid {
     display: grid;
@@ -201,4 +276,56 @@ h3 {
     width: 600px;
     height: 260px;
   }
+}
+
+/*.grid-contacts {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: 60px;
+  grid-column-gap: 15px;
+  grid-row-gap: 10px;
+}*/
+
+/*.grid-contacts {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: repeat(3, 10px);
+  grid-column-gap: 10px;
+  grid-row-gap: 15px;
+}*/
+
+/*.container { 
+  grid-area: 1 / 1 / 4 / 2;
+}*/
+
+
+.fab {
+  display: block;
+  font-size: 3em;
+  margin-left: 80px;
+}
+
+.fa-github-square {color: #333;}
+.fa-linkedin {color:#00a0dc}
+.fa-twitter-square {color: #1da1f2}
+
+.grid-contacts a:hover,
+.grid-contacts a:active{
+  background-color: rgba(207, 207, 207, 0.5);
+  box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+}
+
+.footer {
+  display: flex;
+  margin-top: 40vh;
+  padding: 10px;
+  justify-content: center;
+
+  text-align: center;
+  background-color: rgba(207, 207, 207, 0.85);
+}
+
+.footer a {
+  color: rgb(15, 15, 15);
+  text-decoration: underline;
 }
